@@ -1,0 +1,56 @@
+# package.json のバージョンでリリースを作り、続けて VPM リスティング（vpm.json）を GitHub Pages に公開する
+name: Build Release
+
+on:
+  workflow_dispatch:
+
+env:
+  PACKAGE_NAME: jp.makaria.makas-tools
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: バージョンを読む
+        id: version
+        run: echo "version=$(jq -r .version "Packages/$PACKAGE_NAME/package.json")" >> "$GITHUB_OUTPUT"
+
+      - name: 同じバージョンのリリースが無いか確認
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "${{ steps.version.outputs.version }}" > /dev/null 2>&1; then
+            echo "::error::リリース ${{ steps.version.outputs.version }} は既にあります。package.json の version を上げてください。"
+            exit 1
+          fi
+
+      - name: zip を作る
+        run: |
+          cd "Packages/$PACKAGE_NAME"
+          zip -r "$GITHUB_WORKSPACE/$PACKAGE_NAME-${{ steps.version.outputs.version }}.zip" .
+
+      - name: リリースを作る
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ steps.version.outputs.version }}" \
+            "$PACKAGE_NAME-${{ steps.version.outputs.version }}.zip" \
+            "Packages/$PACKAGE_NAME/package.json" \
+            --title "Maka's Tools ${{ steps.version.outputs.version }}" \
+            --target "${{ github.sha }}" \
+            --generate-notes
+
+  listing:
+    needs: release
+    uses: ./.github/workflows/build-listing.yml

@@ -1,0 +1,22 @@
+{
+    "name": "OutfitSwitcher.Editor",
+    "rootNamespace": "OutfitSwitcher.Editor",
+    "references": [
+        "OutfitSwitcher.Runtime",
+        "nadena.dev.ndmf",
+        "nadena.dev.modular-avatar.core",
+        "VRC.SDKBase",
+        "VRC.SDK3A"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

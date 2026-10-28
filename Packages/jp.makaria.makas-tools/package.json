@@ -1,0 +1,22 @@
+{
+  "name": "jp.makaria.makas-tools",
+  "displayName": "Maka's Tools",
+  "version": "1.0.0",
+  "unity": "2022.3",
+  "description": "VRChat アバター改変用のエディタ拡張ツール集（OutfitSwitcher / Animator Controller Remover）",
+  "author": {
+    "name": "Makaria",
+    "url": "https://github.com/Makaria122"
+  },
+  "url": "https://github.com/Makaria122/MakasTools",
+  "changelogUrl": "https://github.com/Makaria122/MakasTools/releases",
+  "vpmDependencies": {
+    "com.vrchat.avatars": ">=3.7.0",
+    "nadena.dev.ndmf": ">=1.14.0 <2.0.0-a",
+    "nadena.dev.modular-avatar": ">=1.18.0 <2.0.0-a"
+  },
+  "legacyFolders": {
+    "Assets\\OutfitSwitcher": "70617a60387879a4c8cea23da9ff7ad0",
+    "Assets\\AnimatorControllerRemover": "336050b44dc31fb47bd89e00c24f2dca"
+  }
+}
