@@ -9,6 +9,7 @@
     "url": "https://github.com/Makaria122"
   },
   "url": "https://github.com/Makaria122/MakasTools",
+  "licensesUrl": "https://github.com/Makaria122/MakasTools/blob/main/LICENSE",
   "changelogUrl": "https://github.com/Makaria122/MakasTools/releases",
   "vpmDependencies": {
     "com.vrchat.avatars": ">=3.7.0",

@@ -37,3 +37,7 @@ VCC / ALCOM で追加すると、古い `Assets/OutfitSwitcher` と `Assets/Anim
 1. `Packages/jp.makaria.makas-tools/package.json` の `version` を上げてコミット・push する。
 2. GitHub の Actions → **Build Release** → Run workflow。
    zip を作って Releases に載せ、続けて `vpm.json`（GitHub Pages）を更新します。
+
+## ライセンス
+
+All rights reserved. VRChat のアバター制作に使うのは自由ですが、改変・再配布・販売は禁止です。詳しくは [LICENSE](LICENSE) を見てください。
