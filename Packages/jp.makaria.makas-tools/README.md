@@ -1,8 +1,8 @@
 # Maka's Tools
 
-VRChat アバター改変用の Unity エディタ拡張ツール集です。メニューの `Maka's Tools` から使います。
+A collection of Unity editor extensions for customizing VRChat avatars. Use them from the `Maka's Tools` menu.
 
-- **OutfitSwitcher**（`Maka's Tools/OutfitSwitcher`）: 衣装切り替えの FX レイヤー・アニメーション・メニューを非破壊で生成します。
-- **Animator Controller Remover**（`Maka's Tools/Settings/Animator Controller Remover`）: アップロード時に、アバター直下の Animator の Controller を外します。
+- **OutfitSwitcher** (`Maka's Tools/OutfitSwitcher`): Non-destructively generates FX layers, animations and menus for switching outfits.
+- **Animator Controller Remover** (`Maka's Tools/Settings/Animator Controller Remover`): Removes the Controller from the avatar root's Animator on upload.
 
-詳しくはリポジトリの README を見てください: https://github.com/Makaria122/MakasTools
+See the repository README for details: https://github.com/Makaria122/MakasTools

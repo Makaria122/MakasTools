@@ -1,43 +1,43 @@
 # Maka's Tools
 
-VRChat アバター改変用の Unity エディタ拡張ツール集です。
+A collection of Unity editor extensions for customizing VRChat avatars.
 
-| ツール | メニュー | 内容 |
+| Tool | Menu | Description |
 |---|---|---|
-| OutfitSwitcher | `Maka's Tools/OutfitSwitcher` | 衣装切り替えの FX レイヤー・アニメーション・メニューを、専用ウィンドウの設定から非破壊で生成します。衣装内パーツ、連動オブジェクト、Quest 対応、PC 版 → Quest 版への設定コピーに対応。 |
-| Animator Controller Remover | `Maka's Tools/Settings/Animator Controller Remover` | アップロード時に、アバター直下の Animator の Controller を非破壊で None にします（チェックで ON/OFF）。 |
+| OutfitSwitcher | `Maka's Tools/OutfitSwitcher` | Non-destructively generates FX layers, animations and Expression Menus for switching outfits, all from a dedicated window. Supports per-outfit parts, linked objects (IF / AND / OR / NOT conditions), Quest builds, and copying settings from a PC avatar to a Quest avatar. |
+| Animator Controller Remover | `Maka's Tools/Settings/Animator Controller Remover` | Non-destructively sets the Controller of the avatar root's Animator to None on upload. Toggle it with the menu checkmark. |
 
-## 導入（VCC / ALCOM）
+## Installation (VCC / ALCOM)
 
-1. 次のボタンを押すか、URL を VCC / ALCOM の「Packages → Add Repository」に登録します。
+1. Click the button below, or add the URL in VCC / ALCOM under **Packages → Add Repository**.
 
-   [VCC に追加](vcc://vpm/addRepo?url=https://makaria122.github.io/MakasTools/vpm.json)
+   [Add to VCC](vcc://vpm/addRepo?url=https://makaria122.github.io/MakasTools/vpm.json)
 
    ```
    https://makaria122.github.io/MakasTools/vpm.json
    ```
 
-2. プロジェクトの「Manage Project」から **Maka's Tools** を追加します。
-   NDMF と Modular Avatar も自動で入ります。
+2. Open **Manage Project** and add **Maka's Tools**.
+   NDMF and Modular Avatar are installed automatically as dependencies.
 
-### `.unitypackage` 版から移行する場合
+### Migrating from the `.unitypackage` version
 
-VCC / ALCOM で追加すると、古い `Assets/OutfitSwitcher` と `Assets/AnimatorControllerRemover` は自動で削除されます。
-スクリプトの ID は同じなので、アバターに付けた設定はそのまま使えます。
-（自動で消えなかった場合は、この2つのフォルダを手で削除してください。両方あると重複エラーになります）
+When you add the package through VCC / ALCOM, the old `Assets/OutfitSwitcher` and `Assets/AnimatorControllerRemover` folders are removed automatically.
+The script IDs are unchanged, so the settings on your avatars keep working.
+(If the folders are not removed, delete them manually. Having both installed causes duplicate errors.)
 
-## 動作環境
+## Requirements
 
 - Unity 2022.3
-- VRChat SDK Avatars 3.7 以上
-- NDMF 1.14 以上 / Modular Avatar 1.18 以上
+- VRChat SDK Avatars 3.7 or later
+- NDMF 1.14 or later / Modular Avatar 1.18 or later
 
-## リリースの作り方（開発者向け）
+## Making a release (for developers)
 
-1. `Packages/jp.makaria.makas-tools/package.json` の `version` を上げてコミット・push する。
-2. GitHub の Actions → **Build Release** → Run workflow。
-   zip を作って Releases に載せ、続けて `vpm.json`（GitHub Pages）を更新します。
+1. Bump `version` in `Packages/jp.makaria.makas-tools/package.json`, then commit and push.
+2. Run GitHub Actions → **Build Release** → Run workflow.
+   It publishes the zip to Releases and then updates `vpm.json` on GitHub Pages.
 
-## ライセンス
+## License
 
-All rights reserved. VRChat のアバター制作に使うのは自由ですが、改変・再配布・販売は禁止です。詳しくは [LICENSE](LICENSE) を見てください。
+All rights reserved. You are free to use this software to create avatars for VRChat, but modification, redistribution and resale are prohibited. See [LICENSE](LICENSE) for details.
